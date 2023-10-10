@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-justinfourie1993-lifter-qg8mslw7cx.us2.codeanyapp.com',
-    'lifter-log-justin-812c5ed51e59.herokuapp.com', 'localhost']
+    'lifter-log-888688b6aeb4.herokuapp.com', 'localhost']
 
 
 # Application definition
