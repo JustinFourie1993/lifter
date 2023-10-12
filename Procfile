@@ -1,1 +1,1 @@
-web: gunicorn lift.wsgi
+web: gunicorn tables.wsgi
