@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'liftlogger',
+    'django_summernote',
+    'website',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'lift.urls'
+ROOT_URLCONF = 'tables.urls'
 
 TEMPLATES = [
     {
@@ -77,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'lift.wsgi.application'
+WSGI_APPLICATION = 'tables.wsgi.application'
 
 
 # Database

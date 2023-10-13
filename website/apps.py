@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class LiftloggerConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'liftlogger'
+    name = 'website'
