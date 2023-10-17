@@ -55,8 +55,7 @@ footer {
     background-color: #fffaf0;
     color: #231010;
     border: 1px solid #fffaf0;
-    border-radius: 7px;
-}
+} 
 
 .footer-links {
     color: #fffaf0;
@@ -98,4 +97,98 @@ footer {
     background-size: cover;
     background-position: center;
     height: 600px;
+}
+
+.home-divs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-text-boxes{
+    margin: 0;
+    text-align: center;
+    font-size: large;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.home-headers{
+    text-decoration: underline;
+}
+
+.home-button{
+    background-color: #fffaf0;
+    color: #231010;
+    border: 1px solid #231010;
+    border-radius: 7px;
+}
+
+.home-button:hover{
+    color: #fffaf0;
+    background-color: #231010;
+    border: 1px solid #fffaf0;
+    
+}
+
+/* index.html media queries */
+
+@media screen and (max-width: 900px) {
+    .home-text-boxes{
+        font-size: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .home-headers{
+        font-size: 24px;
+        
+    }
+}
+
+@media screen and (max-width: 574px) {
+
+    .home-imgs{
+        display: none;
+    }
+
+    .home-div-1{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../welcome.png');
+    }
+
+    .home-div-2 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../chicken.png');
+    }
+
+    .home-div-3 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../reserve.png');
+            
+    }
+
+    .home-divs{
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        color: white; 
+    }
+
+    .home-button {
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        border-radius: 7px;
+        margin-bottom: 20px;
+    }
+    
+    .home-button:hover {
+        color: #231010;
+        background-color: white;
+        border: 1px solid #fffaf0;
+    
+    }
+    
+    
 }
