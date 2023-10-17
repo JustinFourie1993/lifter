@@ -1,45 +1,50 @@
+/* base.html */
+
 body {
     background-color: #fffaf0;
     color: #231010;
 }
 
-header{
+/* header */
+
+header {
     width: 100%;
     align-content: center;
     border-bottom: 1px solid;
+    width: max-content;
+    margin-bottom: 20px;
+
 }
 
-header{
-    width: max-content;
-    margin: 0;
-}
 
 .navbar-nav {
     margin-left: auto;
     padding-right: 30px;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-size: 40px;
     padding-left: 30px;
 }
 
-.nav-item{
+.nav-item {
     padding: 0px 25px 0px 25px;
     font-size: large;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     text-decoration: underline;
 }
 
-footer{
+/* footer */
+
+footer {
     background-color: #231010;
     color: #fffaf0;
-    
+
 }
 
-#footer-button{
+#footer-button {
     color: #fffaf0;
     background-color: #231010;
     border: 1px solid #fffaf0;
@@ -53,16 +58,44 @@ footer{
     border-radius: 7px;
 }
 
-.footer-links{
+.footer-links {
     color: #fffaf0;
     font-size: large;
     padding: 20px;
 }
 
-.footer-space1{
+.footer-space1 {
     padding: 10px;
 }
 
 .footer-space {
     padding-top: 10px;
+}
+
+/* index.html */
+
+.home-rows{
+    padding-bottom: 20px;
+}
+
+.welcome-img {
+    background-image: url('../welcome.png');
+}
+
+.chicken-img {
+    background-image: url('../chicken.png');
+}
+
+.reserve-img {
+    background-image: url('../reserve.png');
+}
+
+.home-imgs {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
 }
