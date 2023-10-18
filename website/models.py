@@ -4,7 +4,8 @@ from cloudinary.models import CloudinaryField
 
 
 FOOD_TYPE = (("fish", "fish"), ("meat", "meat"), ("vegan", "vegan"))
-MEAL_TYPE = (("starter", "starter"), ("main", "main"), ("dessert", "dessert"))
+MEAL_TYPE = (("starter", "starter"), ("main", "main"),
+             ("dessert", "dessert"), ("drink", "drink"))
 
 
 class Booking(models.Model):
@@ -19,10 +20,11 @@ class Booking(models.Model):
     class Meta:
         ordering = ['booked_on']
 
-    
+
 class Meal(models.Model):
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=200)
+    excerpt = models.TextField(blank=True)
     price = models.IntegerField()
     food_type = models.CharField(max_length=100, choices=FOOD_TYPE)
     meal_type = models.CharField(max_length=100, choices=MEAL_TYPE)
@@ -33,4 +35,3 @@ class Meal(models.Model):
 
     def __str__(self):
         return self.title
-

@@ -3,6 +3,7 @@
 body {
     background-color: #fffaf0;
     color: #231010;
+    
 }
 
 /* header */
@@ -41,6 +42,7 @@ header {
 footer {
     background-color: #231010;
     color: #fffaf0;
+    margin-top: 30px;
 
 }
 
@@ -190,5 +192,22 @@ footer {
     
     }
     
-    
+}
+
+/* menu.html */
+
+.starter-col{
+    text-align: center;
+}
+
+.drinks-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-headers{
+    margin-bottom: 30px;
+    text-decoration: underline;
+    margin-top: 20px;
 }
