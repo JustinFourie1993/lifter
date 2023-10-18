@@ -4,12 +4,12 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4 starter-col">
-            <h4 class="menu-headers">Starters</h4>
+        <div class="col-md-4 menu-col">
+            <h3 class="menu-headers">Starters</h3>
             {% for meal in meal_list %}
             {% if meal.meal_type == 'starter' %}
             <div class="row">
-                <h6>{{ meal.title}}</h6>
+                <h5 class="meal-title">{{ meal.title}}</h5>
                 <p>{{ meal.excerpt }}</p>
                 <p>{{ meal.price }} kr</p>
 
@@ -17,12 +17,12 @@
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-md-4 starter-col">
-            <h4 class="menu-headers">Mains</h4>
+        <div class="col-md-4 menu-col">
+            <h3 class="menu-headers">Mains</h3>
             {% for meal in meal_list %}
             {% if meal.meal_type == 'main' %}
             <div class="row">
-                <h6>{{ meal.title}}</h6>
+                <h5 class="meal-title">{{ meal.title}}</h5>
                 <p>{{ meal.excerpt }}</p>
                 <p>{{ meal.price }} kr</p>
         
@@ -30,12 +30,12 @@
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-md-4 starter-col">
-            <h4 class="menu-headers">Desserts</h4>
+        <div class="col-md-4 menu-col">
+            <h3 class="menu-headers">Desserts</h3>
             {% for meal in meal_list %}
             {% if meal.meal_type == 'dessert' %}
             <div class="row">
-                <h6>{{ meal.title}}</h6>
+                <h5 class="meal-title">{{ meal.title}}</h5>
                 <p>{{ meal.excerpt }}</p>
                 <p>{{ meal.price }} kr</p>
         
@@ -46,13 +46,13 @@
     </div>
     <hr>
     <div class="row drinks-div">
-        <div class="col-12 starter-col">
-            <h4 class="menu-headers">Beverages</h4>
+        <div class="col-12 menu-col">
+            <h3 class="menu-headers">Beverages</h3>
             <div class="row">
             {% for meal in meal_list %}
             {% if meal.meal_type == 'drink' %}
             <div class="col-md-4">
-                <h6>{{ meal.title}}</h6>
+                <h5 class="meal-title">{{ meal.title}}</h5>
                 <p>{{ meal.excerpt }}</p>
                 <p>{{ meal.price }} kr</p>
             </div>

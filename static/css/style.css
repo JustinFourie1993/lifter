@@ -3,6 +3,7 @@
 body {
     background-color: #fffaf0;
     color: #231010;
+    font-family: "futura-pt";
     
 }
 
@@ -196,8 +197,10 @@ footer {
 
 /* menu.html */
 
-.starter-col{
+.menu-col{
     text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .drinks-div{
@@ -208,6 +211,10 @@ footer {
 
 .menu-headers{
     margin-bottom: 30px;
-    text-decoration: underline;
+    text-decoration: double;
     margin-top: 20px;
+}
+
+.meal-title{
+    text-decoration: underline;
 }
