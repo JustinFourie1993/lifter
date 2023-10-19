@@ -37,6 +37,9 @@ ALLOWED_HOSTS = [
     'lifter-log-888688b6aeb4.herokuapp.com', 'localhost']
 
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-justinfourie1993-lifter-qg8mslw7cx.us2.codeanyapp.com']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -53,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'website',
 ]
 
@@ -60,6 +64,8 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

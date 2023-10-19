@@ -20,6 +20,7 @@ class Booking(models.Model):
     class Meta:
         ordering = ['booked_on']
 
+    
 
 class Meal(models.Model):
     title = models.CharField(max_length=100)

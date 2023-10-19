@@ -218,3 +218,35 @@ footer {
 .meal-title{
     text-decoration: underline;
 }
+
+/* booking.html */
+
+.booking-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.form{
+    text-align: center;
+}
+
+.menu-container{
+    margin-bottom: 300px;
+}
+
+.form-button-div{
+    margin-top: 30px;
+}
+
+.form-button{
+    background-color: #231010;
+    border: 1px solid #231010;
+}
+
+.form-button:hover {
+    color: #231010;
+    border: 1px solid #231010;
+    background-color: #fffaf0;
+}
