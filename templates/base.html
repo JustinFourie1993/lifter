@@ -1,3 +1,4 @@
+<!-- base.html -->
 {% load static %} {% load cloudinary %}
 
 <!DOCTYPE html>
@@ -11,7 +12,8 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap"
+      href="https://fonts.googleapis.com/css2?
+      family=Lato:wght@300;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -39,6 +41,7 @@
 
   <body class="container-fluid d-flex flex-column">
     <header class="site-header container-fluid">
+      <!-- navigation bar -->
       <nav class="navbar navbar-expand-md navbar-light">
         <a class="navbar-brand" href="{% url 'home' %}">Tables</a>
         <button
@@ -53,6 +56,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- navigation links -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'home' %}">Home</a>
@@ -77,6 +81,7 @@
           ><button id="footer-button">MAKE RESERVATION</button></a
         >
       </div>
+      <!-- footer-links -->
       <div class="container text-center footer-space1">
         <a
           class="footer-links"

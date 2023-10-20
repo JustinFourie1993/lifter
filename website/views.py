@@ -4,10 +4,12 @@ from .models import Meal, Booking
 from .forms import MakeBooking
 
 
+# Displays home page
 def index(request):
     return render(request, 'index.html')
 
 
+# Displays booking page and post data from booking form
 def make_booking(request):
 
     if request.method == 'POST':
@@ -21,16 +23,12 @@ def make_booking(request):
             return render(request, 'booking.html', context)
 
     make_booking = MakeBooking()
-
     context = {'form': make_booking, 'booked': False, }
-
     return render(request, 'booking.html', context)
 
 
+# Displays meal objects on menu page
 class MealList(generic.ListView):
     model = Meal
     queryset = Meal.objects.order_by('price')
     template_name = 'menu.html'
-    
-
-

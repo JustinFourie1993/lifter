@@ -157,15 +157,18 @@ footer {
     }
 
     .home-div-1{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../welcome.png');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.60), 
+        rgba(0, 0, 0, 0.60)), url('../welcome.png');
     }
 
     .home-div-2 {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../chicken.png');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.60), 
+        rgba(0, 0, 0, 0.60)), url('../chicken.png');
     }
 
     .home-div-3 {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('../reserve.png');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.60), 
+        rgba(0, 0, 0, 0.60)), url('../reserve.png');
             
     }
 

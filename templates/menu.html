@@ -1,67 +1,57 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4 menu-col">
-            <h3 class="menu-headers">Starters</h3>
-            {% for meal in meal_list %}
-            {% if meal.meal_type == 'starter' %}
-            <div class="row">
-                <h5 class="meal-title">{{ meal.title}}</h5>
-                <p>{{ meal.excerpt }}</p>
-                <p>{{ meal.price }} kr</p>
-
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <div class="col-md-4 menu-col">
-            <h3 class="menu-headers">Mains</h3>
-            {% for meal in meal_list %}
-            {% if meal.meal_type == 'main' %}
-            <div class="row">
-                <h5 class="meal-title">{{ meal.title}}</h5>
-                <p>{{ meal.excerpt }}</p>
-                <p>{{ meal.price }} kr</p>
-        
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <div class="col-md-4 menu-col">
-            <h3 class="menu-headers">Desserts</h3>
-            {% for meal in meal_list %}
-            {% if meal.meal_type == 'dessert' %}
-            <div class="row">
-                <h5 class="meal-title">{{ meal.title}}</h5>
-                <p>{{ meal.excerpt }}</p>
-                <p>{{ meal.price }} kr</p>
-        
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
+  <div class="row">
+    <div class="col-md-4 menu-col">
+      <h3 class="menu-headers">Starters</h3>
+      <!-- itterates through and displays meals that are starters -->
+      {% for meal in meal_list %} {% if meal.meal_type == 'starter' %}
+      <div class="row">
+        <h5 class="meal-title">{{ meal.title}}</h5>
+        <p>{{ meal.excerpt }}</p>
+        <p>{{ meal.price }} kr</p>
+      </div>
+      {% endif %} {% endfor %}
     </div>
-    <hr>
-    <div class="row drinks-div">
-        <div class="col-12 menu-col">
-            <h3 class="menu-headers">Beverages</h3>
-            <div class="row">
-            {% for meal in meal_list %}
-            {% if meal.meal_type == 'drink' %}
-            <div class="col-md-4">
-                <h5 class="meal-title">{{ meal.title}}</h5>
-                <p>{{ meal.excerpt }}</p>
-                <p>{{ meal.price }} kr</p>
-            </div>
-            
-            {% endif %}
-            {% endfor %}
-            </div>
-        </div>
+    <div class="col-md-4 menu-col">
+      <h3 class="menu-headers">Mains</h3>
+    <!-- itterates through and displays meals that are mains -->
+      {% for meal in meal_list %} {% if meal.meal_type == 'main' %}
+      <div class="row">
+        <h5 class="meal-title">{{ meal.title}}</h5>
+        <p>{{ meal.excerpt }}</p>
+        <p>{{ meal.price }} kr</p>
+      </div>
+      {% endif %} {% endfor %}
     </div>
+    <div class="col-md-4 menu-col">
+      <h3 class="menu-headers">Desserts</h3>
+    <!-- itterates through and displays meals that are desserts -->
+      {% for meal in meal_list %} {% if meal.meal_type == 'dessert' %}
+      <div class="row">
+        <h5 class="meal-title">{{ meal.title}}</h5>
+        <p>{{ meal.excerpt }}</p>
+        <p>{{ meal.price }} kr</p>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+  <hr />
+  <div class="row drinks-div">
+    <div class="col-12 menu-col">
+      <h3 class="menu-headers">Beverages</h3>
+      <div class="row">
+        <!-- itterates through and displays drinks -->
+        {% for meal in meal_list %} {% if meal.meal_type == 'drink' %}
+        <div class="col-md-4">
+          <h5 class="meal-title">{{ meal.title}}</h5>
+          <p>{{ meal.excerpt }}</p>
+          <p>{{ meal.price }} kr</p>
+        </div>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 
 {%endblock%}
