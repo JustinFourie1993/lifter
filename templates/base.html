@@ -38,7 +38,7 @@
   <body class="container-fluid d-flex flex-column">
     <header class="site-header container-fluid">
       <nav class="navbar navbar-expand-md navbar-light">
-        <a class="navbar-brand" href="#">Tables</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Tables</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -53,16 +53,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Menu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Reservations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="{% url 'booking' %}">Reservations</a>
             </li>
           </ul>
         </div>

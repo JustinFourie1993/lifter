@@ -14,8 +14,8 @@ class MealAdmin(SummernoteModelAdmin):
 
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
-    list_display = ('name', 'date', 'time', 'number_of_guests', 'approved')
-    list_filter = ('date', 'time', 'number_of_guests', 'approved')
+    list_display = ('name', 'date', 'time', 'party_of', 'approved')
+    list_filter = ('date', 'time', 'party_of', 'approved')
     search_fields = ('name', 'email', 'date', 'time')
     actions = ['approve_bookings']
 

@@ -13,7 +13,7 @@ class Booking(models.Model):
     email = models.EmailField(max_length=200)
     date = models.DateField()
     time = models.TimeField()
-    number_of_guests = models.IntegerField()
+    party_of = models.IntegerField()
     booked_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 

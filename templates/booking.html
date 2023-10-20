@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 <div class="container-fluid menu-container">
     <div class="row booking-row">
+        {% if booked %}
+        <div class="col-sm-4">
+        <div class="alert alert-success" role="alert">Your booking has been made!</div>
+        </div>
+        {% else %}
         <h4>Reservation</h4>
         <div class="col-md-4">
             <form class="form" method="post">
+                {{ form | crispy }}
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Book Now</button>
+                
+                <button class="form-button" type="submit">Book Now</button>
             </form>
+            {% endif %}
         </div>
     </div>
 </div>
