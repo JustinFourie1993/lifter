@@ -20,6 +20,9 @@ class Booking(models.Model):
     class Meta:
         ordering = ['booked_on']
 
+    def __str__(self):
+        return self.name
+
     
 
 class Meal(models.Model):

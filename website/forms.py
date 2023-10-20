@@ -5,4 +5,4 @@ from django import forms
 class MakeBooking(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = '__all__'
+        fields = ['name', 'email', 'date', 'time', 'number_of_guests']

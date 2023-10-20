@@ -15,16 +15,14 @@ from .forms import MakeBooking
 
 
 def make_booking(request):
-
-
+    
     if request.method == 'POST':
         make_booking = MakeBooking(request.POST)
 
         if make_booking.is_valid():
             make_booking.save()
+            
+    make_booking = MakeBooking()        
+    context = {'form': make_booking}
 
-
-
-    context = {'form' : make_booking}
-
-    return render(request, 'booking.html' , context)
+    return render(request, 'booking.html', context)

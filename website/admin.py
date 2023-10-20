@@ -19,5 +19,5 @@ class BookingAdmin(SummernoteModelAdmin):
     search_fields = ('name', 'email', 'date', 'time')
     actions = ['approve_bookings']
 
-    def approve_bookings(self, request, querystet):
-        querystet.update(approved=True)
+    def approve_bookings(self, request, queryset):
+        queryset.update(approved=True)
