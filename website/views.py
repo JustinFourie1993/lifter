@@ -14,20 +14,23 @@ def make_booking(request):
         make_booking = MakeBooking(request.POST)
 
         if make_booking.is_valid():
+            make_booking.instance.email = request.user.email
+            make_booking.instance.name = request.user.username
             make_booking.save()
             context = {'form': make_booking, 'booked': True}
             return render(request, 'booking.html', context)
 
     make_booking = MakeBooking()
-    context = {'form': make_booking, 'booked': False}
+
+    context = {'form': make_booking, 'booked': False, }
 
     return render(request, 'booking.html', context)
 
 
-# class MealList(generic.ListView):
-#     model = Meal
-#     queryset = Meal.objects.order_by('price')
-#     template_name = 'menu.html'
+class MealList(generic.ListView):
+    model = Meal
+    queryset = Meal.objects.order_by('price')
+    template_name = 'menu.html'
     
 
 

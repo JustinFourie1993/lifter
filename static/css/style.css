@@ -44,7 +44,6 @@ header {
 footer {
     background-color: #231010;
     color: #fffaf0;
-    margin-top: 30px;
     margin-top: auto;
 
 }
@@ -247,7 +246,8 @@ footer {
     border: 1px solid #231010;
     color: #fffaf0;
     border-radius: 3px;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .form-button:hover {

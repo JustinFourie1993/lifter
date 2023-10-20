@@ -38,7 +38,8 @@ ALLOWED_HOSTS = [
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-justinfourie1993-lifter-qg8mslw7cx.us2.codeanyapp.com']
+    'https://8000-justinfourie1993-lifter-qg8mslw7cx.us2.codeanyapp.com',
+    'https://8000-justinfourie1993-lifter-qg8mslw7cx.us2.codeanyapp.com/accounts/login/']
 
 # Application definition
 
@@ -63,7 +64,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/booking'
 LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
