@@ -31,6 +31,12 @@
     <!-- Booking form -->
     <div class="col-md-4">
       <h4>Reservation</h4>
+    <!-- Display booking success message -->
+    {% if booking_success %}
+    <div class="alert alert-success">
+        Your booking was successful!
+    </div>
+    {% endif %}
       <form class="form" method="post">
         {{ form | crispy }} {% csrf_token %}
         <button class="form-button" type="submit">Book Now</button>
