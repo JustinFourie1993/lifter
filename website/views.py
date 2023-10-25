@@ -60,7 +60,7 @@ def cancel_booking(request, booking_id):
 
     if request.method == 'POST':
         booking.delete()
-        return redirect('indec')
+        return redirect('index')
 
     return render(request, 'cancel_booking.html', {'booking': booking})
 
