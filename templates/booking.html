@@ -1,53 +1,65 @@
-{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %}
+{% extends "base.html" %}
 
+{% load crispy_forms_tags %}
+
+{% block content %}
 <div class="container-fluid menu-container">
-  <div class="row booking-row">
-    <!-- Tells user if they are logged in -->
-    {% if user.is_authenticated %}
-    <div class="alert alert-success col-sm-4" role="alert">
-      You are logged in
-    </div>
-    <a href="{% url 'account_logout' %}">
-      <button class="form-button">Log Out</button></a
-    >
+    <div class="row booking-row">
 
-    <!-- Display user bookings -->
-    {% if user_bookings %}
-    <div class="col-sm-8">
-      <h4>Your Bookings</h4>
-      <ul>
-        {% for booking in user_bookings %}
-        <li>
-          {{ booking.date }} at {{ booking.time }} for party of {{
-          booking.party_of }}
-          <a href="{% url 'edit_booking' booking.id %}">Edit</a> |
-          <a href="{% url 'cancel_booking' booking.id %}">Cancel</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
+        <!-- Tells if user is logged in -->
+        {% if user.is_authenticated %}
+        <div class="alert alert-success col-sm-4" role="alert">
+            You are logged in
+        </div>
+        <a href="{% url 'account_logout' %}">
+            <button class="form-button">Log Out</button>
+        </a>
 
-    <!-- Booking form -->
-    <div class="col-md-4">
-      <h4>Reservation</h4>
-    <!-- Display booking success message -->
-    {% if booking_success %}
-    <div class="alert alert-success">
-        Your booking was successful!
-    </div>
-    {% endif %}
-      <form class="form" method="post">
-        {{ form | crispy }} {% csrf_token %}
-        <button class="form-button" type="submit">Book Now</button>
-      </form>
-    </div>
+        <!-- Displays user bookings -->
+        {% if user_bookings %}
+        <div class="col-sm-8">
+            <h4>Your Bookings</h4>
+            <ul>
+                {% for booking in user_bookings %}
+                <li>
+                    {{ booking.date }} at {{ booking.time }} for party of {{ booking.party_of }}
+                    <a href="{% url 'edit_booking' booking.id %}">Edit</a> |
+                    <a href="{% url 'cancel_booking' booking.id %}">Cancel</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
 
-    {% else %}
-    <div class="alert alert-warning col-sm-4" role="alert">
-      Please log in to manage or make a booking.
+        <div class="col-md-4">
+            <h4>Reservation</h4>
+
+            <!-- Display booking success message -->
+            {% if booking_success %}
+            <div class="alert alert-success">
+                Your booking was successful!
+            </div>
+            {% endif %}
+
+            <!-- Display booking cancelled message -->
+            {% if booking_cancelled %}
+            <div class="alert alert-warning">
+                Your booking has been cancelled.
+            </div>
+            {% endif %}
+
+            <form class="form" method="post">
+                {{ form | crispy }}
+                {% csrf_token %}
+                <button class="form-button" type="submit">Book Now</button>
+            </form>
+        </div>
+
+        {% else %}
+        <div class="alert alert-warning col-sm-4" role="alert">
+            Please log in to manage or make a booking.
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
-  </div>
 </div>
 {% endblock %}
