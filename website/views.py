@@ -61,16 +61,12 @@ def edit_booking(request, booking_id):
 
 @login_required
 def cancel_booking(request, booking_id):
-    booking = get_object_or_404(Booking, pk=booking_id)
-
-    if booking.user != request.user:
-        return redirect('home')  
-
-    if request.method == 'POST':
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    if request.method == "POST":
         booking.delete()
-        return redirect('index')
+        return make_booking(request)
 
-    return render(request, 'cancel_booking.html', {'booking': booking})
+    return render(request, 'booking.html', {'booking_cancelled': True})
 
 # Displays meal objects on menu page
 class MealList(generic.ListView):
