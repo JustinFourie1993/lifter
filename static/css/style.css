@@ -19,10 +19,14 @@ header {
 
 }
 
+.navbar-collapse {
+    display: flex;
+}
 
 .navbar-nav {
     margin-left: auto;
     padding-right: 30px;
+    
 }
 
 .navbar-brand {
@@ -33,6 +37,7 @@ header {
 .nav-item {
     padding: 0px 25px 0px 25px;
     font-size: large;
+    width: min-content;
 }
 
 .nav-link:hover {
