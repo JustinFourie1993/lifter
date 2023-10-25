@@ -14,20 +14,28 @@ def index(request):
 # Displays booking page and post data from booking form
 def make_booking(request):
 
+    booking_cancelled = False
+    booking_success = False
+
     if request.method == 'POST':
         form = MakeBooking(request.POST)
+
         if form.is_valid():
-            booking = form.save(commit=False)
-            booking.user = request.user
-            booking.email = request.user.email
-            booking.name = request.user.username
-            booking.save()
-            return redirect('index')
+            form.instance.email = request.user.email
+            form.instance.name = request.user.username
+            form.save()
+            booking_success = True
 
     else:
         form = MakeBooking()
 
-    return render(request, 'booking.html', {'form': form})
+    context = {
+        'form': form,
+        'booking_cancelled': booking_cancelled,
+        'booking_success': booking_success
+    }
+
+    return render(request, 'booking.html', context)
 
 
 
