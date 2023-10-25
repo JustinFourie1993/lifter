@@ -258,3 +258,23 @@ footer {
     border: 1px solid #231010;
     background-color: #fffaf0;
 }
+
+.booking-row{
+    text-align: center;
+}
+
+.bookings-button{
+    background-color: #231010;
+    border: 1px solid #231010;
+    color: #fffaf0;
+    border-radius: 3px;
+}
+
+.booking-item{
+    border: 1px solid #231010;
+    border-radius: 3px;
+    padding: 10px;
+    list-style-type: none;
+    margin: 5px;
+}
+

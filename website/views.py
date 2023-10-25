@@ -1,17 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from django.views import generic, View
-from django.urls import reverse
 from .models import Meal, Booking
 from .forms import MakeBooking
+from django.views import generic
 
 
-# Displays home page
 def index(request):
     return render(request, 'index.html')
 
 
-# Displays booking page and post data from booking form
+@login_required
 def make_booking(request):
 
     booking_cancelled = False
@@ -19,44 +17,43 @@ def make_booking(request):
 
     if request.method == 'POST':
         form = MakeBooking(request.POST)
-
         if form.is_valid():
-            form.instance.email = request.user.email
-            form.instance.name = request.user.username
-            form.save()
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.email = request.user.email
+            booking.name = request.user.username
+            booking.save()
             booking_success = True
 
     else:
         form = MakeBooking()
 
+    user_bookings = Booking.objects.filter(user=request.user)
+
     context = {
         'form': form,
         'booking_cancelled': booking_cancelled,
-        'booking_success': booking_success
+        'booking_success': booking_success,
+        'user_bookings': user_bookings
     }
 
     return render(request, 'booking.html', context)
 
 
-
 @login_required
 def edit_booking(request, booking_id):
-    booking = get_object_or_404(Booking, pk=booking_id)
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
 
-    if booking.user != request.user:
-        return redirect('home')  
-
-    if request.method == 'POST':
+    if request.method == "POST":
         form = MakeBooking(request.POST, instance=booking)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('booking')
 
     else:
         form = MakeBooking(instance=booking)
 
-    return render(request, 'edit_booking.html', {'form': form})
-
+    return render(request, 'booking.html', {'form': form})
 
 
 @login_required
@@ -64,11 +61,11 @@ def cancel_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)
     if request.method == "POST":
         booking.delete()
-        return make_booking(request)
+        return redirect('booking')
 
     return render(request, 'booking.html', {'booking_cancelled': True})
 
-# Displays meal objects on menu page
+
 class MealList(generic.ListView):
     model = Meal
     queryset = Meal.objects.order_by('price')

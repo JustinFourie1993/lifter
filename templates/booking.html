@@ -8,30 +8,39 @@
 
         <!-- Tells if user is logged in -->
         {% if user.is_authenticated %}
-        <div class="alert alert-success col-sm-4" role="alert">
+        
+        <div class="alert alert-success col-md-8" role="alert">
             You are logged in
         </div>
         <a href="{% url 'account_logout' %}">
             <button class="form-button">Log Out</button>
         </a>
+        
 
         <!-- Displays user bookings -->
         {% if user_bookings %}
-        <div class="col-sm-8">
+        <div class="row booking-row">
+        <div class="col-md-8">
             <h4>Your Bookings</h4>
-            <ul>
+            
                 {% for booking in user_bookings %}
-                <li>
+                
+                <div class="booking-item">
                     {{ booking.date }} at {{ booking.time }} for party of {{ booking.party_of }}
-                    <a href="{% url 'edit_booking' booking.id %}">Edit</a> |
-                    <a href="{% url 'cancel_booking' booking.id %}">Cancel</a>
-                </li>
+                    <br>
+                    <a href="{% url 'edit_booking' booking.id %}"><button class="bookings-button">Edit</button></a> |
+                    <a href="{% url 'cancel_booking' booking.id %}"><button class="bookings-button">Cancel</button></a>
+                </div>
+                
+                
                 {% endfor %}
-            </ul>
+            
         </div>
+        </div>
+        
         {% endif %}
 
-        <div class="col-md-4">
+        <div class="col-md-8">
             <h4>Reservation</h4>
 
             <!-- Display booking success message -->
