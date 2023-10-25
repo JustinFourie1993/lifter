@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        {% if user.is_authenticated %}
+        <h4>Cancel Reservation</h4>
+        <p>Are you sure you want to cancel the booking for {{ booking.date }} at {{ booking.time }}?</p>
+        <div class="col-md-4">
+            <form class="form" method="post">
+                {% csrf_token %}
+                <button class="form-button" type="submit">Confirm Cancellation</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">Please login to cancel a booking.</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
