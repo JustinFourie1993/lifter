@@ -35,7 +35,6 @@ def make_booking(request):
 def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, pk=booking_id)
 
-    
     if booking.user != request.user:
         return redirect('home')  
 
