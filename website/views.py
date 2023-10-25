@@ -22,7 +22,7 @@ def make_booking(request):
             booking.email = request.user.email
             booking.name = request.user.username
             booking.save()
-            return redirect('booking_success')
+            return redirect('index')
 
     else:
         form = MakeBooking()
@@ -42,13 +42,27 @@ def edit_booking(request, booking_id):
         form = MakeBooking(request.POST, instance=booking)
         if form.is_valid():
             form.save()
-            return redirect('booking_success')
+            return redirect('index')
 
     else:
         form = MakeBooking(instance=booking)
 
     return render(request, 'edit_booking.html', {'form': form})
 
+
+
+@login_required
+def cancel_booking(request, booking_id):
+    booking = get_object_or_404(Booking, pk=booking_id)
+
+    if booking.user != request.user:
+        return redirect('home')  
+
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('indec')
+
+    return render(request, 'cancel_booking.html', {'booking': booking})
 
 # Displays meal objects on menu page
 class MealList(generic.ListView):
