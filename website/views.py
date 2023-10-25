@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.views import generic, View
+from django.urls import reverse
 from .models import Meal, Booking
 from .forms import MakeBooking
 
@@ -13,18 +15,20 @@ def index(request):
 def make_booking(request):
 
     if request.method == 'POST':
-        make_booking = MakeBooking(request.POST)
+        form = MakeBooking(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.email = request.user.email
+            booking.name = request.user.username
+            booking.save()
+            # Redirect to a success page or the same page with a success message
+            return redirect('booking_success')
 
-        if make_booking.is_valid():
-            make_booking.instance.email = request.user.email
-            make_booking.instance.name = request.user.username
-            make_booking.save()
-            context = {'form': make_booking, 'booked': True}
-            return render(request, 'booking.html', context)
+    else:
+        form = MakeBooking()
 
-    make_booking = MakeBooking()
-    context = {'form': make_booking, 'booked': False, }
-    return render(request, 'booking.html', context)
+    return render(request, 'booking.html', {'form': form})
 
 
 # Displays meal objects on menu page
