@@ -22,13 +22,33 @@ def make_booking(request):
             booking.email = request.user.email
             booking.name = request.user.username
             booking.save()
-            # Redirect to a success page or the same page with a success message
             return redirect('booking_success')
 
     else:
         form = MakeBooking()
 
     return render(request, 'booking.html', {'form': form})
+
+
+
+@login_required
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, pk=booking_id)
+
+    
+    if booking.user != request.user:
+        return redirect('home')  
+
+    if request.method == 'POST':
+        form = MakeBooking(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('booking_success')
+
+    else:
+        form = MakeBooking(instance=booking)
+
+    return render(request, 'edit_booking.html', {'form': form})
 
 
 # Displays meal objects on menu page
