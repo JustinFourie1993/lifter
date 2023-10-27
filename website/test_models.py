@@ -26,3 +26,23 @@ class BookingModelTest(TestCase):
         self.assertEqual(booking.user.username, "john")
         self.assertEqual(booking.party_of, 3)
         self.assertFalse(booking.approved)
+
+
+class MealModelTest(TestCase):
+    def setUp(self):
+        # Create a meal
+        Meal.objects.create(
+            title="Vegan Pizza",
+            description="Delicious vegan pizza with plant-based cheese and toppings.",
+            excerpt="Best Vegan Pizza",
+            price=12.00,
+            food_type="vegan",
+            meal_type="main"
+        )
+
+    def test_meal_creation(self):
+        meal = Meal.objects.get(title="Vegan Pizza")
+        self.assertEqual(
+            meal.description, "Delicious vegan pizza with plant-based cheese and toppings.")
+        self.assertEqual(meal.food_type, "vegan")
+        self.assertEqual(meal.meal_type, "main")
