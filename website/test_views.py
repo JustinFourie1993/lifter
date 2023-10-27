@@ -42,3 +42,25 @@ class MakeBookingViewTest(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTrue(
             'A booking with this date and time already exists.' in response.content.decode())
+
+
+class EditBookingViewTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='testuser', password='testpassword')
+        self.booking = Booking.objects.create(
+            date="2023-10-25", time="14:00", user=self.user, party_of=2)
+        self.client.login(username='testuser', password='testpassword')
+
+    def test_edit_booking(self):
+        
+        response = self.client.post(reverse('edit_booking', args=[self.booking.id]), data={
+            'date': '2023-10-26',
+            'time': '15:00',
+            'party_of': '4',
+        })
+
+        self.assertRedirects(response, reverse('booking'))
+
+        
+        
