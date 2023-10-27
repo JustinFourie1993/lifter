@@ -10,4 +10,6 @@ urlpatterns = [
          views.edit_booking, name='edit_booking'),
     path('booking/cancel/<int:booking_id>/',
          views.cancel_booking, name='cancel_booking'),
+    path('check_availability/', views.check_availability,
+         name='check_availability'),
 ]
