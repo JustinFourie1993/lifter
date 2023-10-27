@@ -29,13 +29,20 @@ def make_booking(request):
     if request.method == 'POST':
         form = MakeBooking(request.POST)
         if form.is_valid():
-            booking = form.save(commit=False)
-            booking.user = request.user
-            booking.email = request.user.email
-            booking.name = request.user.username
-            booking.save()
-            booking_success = True
+            date = form.cleaned_data['date']
+            time = form.cleaned_data['time']
+            existing_bookings = Booking.objects.filter(date=date, time=time)
 
+            if not existing_bookings.exists():
+                booking = form.save(commit=False)
+                booking.user = request.user
+                booking.email = request.user.email
+                booking.name = request.user.username
+                booking.save()
+                booking_success = True
+            else:
+                form.add_error(
+                    None, "A booking with this date and time already exists.")
     else:
         form = MakeBooking()
 
