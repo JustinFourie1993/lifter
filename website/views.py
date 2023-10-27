@@ -3,6 +3,17 @@ from django.contrib.auth.decorators import login_required
 from .models import Meal, Booking
 from .forms import MakeBooking
 from django.views import generic
+from django.http import JsonResponse
+
+
+def check_availability(request):
+    date = request.GET.get('date')
+    time = request.GET.get('time')
+    bookings_on_date = Booking.objects.filter(date=date, time=time)
+
+    if bookings_on_date.exists():
+        return JsonResponse({'available': False})
+    return JsonResponse({'available': True})
 
 
 def index(request):
