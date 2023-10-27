@@ -16,3 +16,12 @@ class MakeBookingFormTest(TestCase):
         form = MakeBooking(data={})
         self.assertFalse(form.is_valid())
         self.assertEquals(len(form.errors), 3)
+
+    def test_make_booking_form_invalid_party_of_data(self):
+        form = MakeBooking(data={
+            'date': '2022-10-25',
+            'time': '14:00',
+            'party_of': 0 
+        })
+        self.assertFalse(form.is_valid())
+        self.assertIn('party_of', form.errors)
