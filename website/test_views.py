@@ -62,5 +62,19 @@ class EditBookingViewTest(TestCase):
 
         self.assertRedirects(response, reverse('booking'))
 
-        
+
+class CancelBookingViewTest(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create_user(
+            'john', 'john@example.com', 'johnpassword')
+        self.booking = Booking.objects.create(
+            date="2023-10-25", time="14:00", user=self.user, party_of=2)
+        self.client.login(username='john', password='johnpassword')
+
+    def test_cancel_booking(self):
+        response = self.client.post(
+            reverse('cancel_booking', args=[self.booking.id]))
+        self.assertFalse(Booking.objects.filter(id=self.booking.id).exists())
         
