@@ -77,4 +77,18 @@ class CancelBookingViewTest(TestCase):
         response = self.client.post(
             reverse('cancel_booking', args=[self.booking.id]))
         self.assertFalse(Booking.objects.filter(id=self.booking.id).exists())
-        
+
+
+class MealListViewTest(TestCase):
+
+    def setUp(self):
+        Meal.objects.create(title='Meal A', price=20.00)
+        Meal.objects.create(title='Meal B', price=10.00)
+
+    def test_meals_ordered_by_price(self):
+        response = self.client.get(reverse('menu'))
+        meals = list(response.context['meal_list'])
+        self.assertEquals(meals[0].title, 'Meal B')
+        self.assertEquals(meals[1].title, 'Meal A')
+        self.assertEquals(meals[0].price, 10.00)
+        self.assertEquals(meals[1].price, 20.00)
