@@ -16,7 +16,7 @@ class BookingModelTest(TestCase):
             name="John Doe",
             email="johndoe@example.com",
             date=datetime.date.today(),
-            time=datetime.time(13, 0),  # 1 PM
+            time=datetime.time(13, 0), 
             party_of=3
         )
 
