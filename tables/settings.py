@@ -16,11 +16,8 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'djsvysj8v',
-    'API_KEY': '319164399238756',
-    'API_SECRET': '-aVcO3JQMzdOuqi-hScr83dou_4'
-}
+
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 ALLOWED_HOSTS = [
     '8000-justinfourie1993-lifter-qg8mslw7cx.us2.codeanyapp.com',
