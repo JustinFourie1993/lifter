@@ -10,13 +10,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-CLOUDINARY_URL = 'CLOUDINARY_URL'
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 ALLOWED_HOSTS = [
     '8000-justinfourie1993-lifter-qg8mslw7cx.us2.codeanyapp.com',
