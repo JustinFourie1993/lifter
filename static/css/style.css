@@ -84,15 +84,15 @@ footer {
 }
 
 .welcome-img {
-    background-image: url('static/welcome');
+    background-image: url('https: //res.cloudinary.com/djsvysj8v/image/upload/welcome.jpg');
 }
 
 .chicken-img {
-    background-image: url('static/chicken');
+    background-image: url('https: //res.cloudinary.com/djsvysj8v/image/upload/chicken.jpg');
 }
 
 .reserve-img {
-    background-image: url('static/reserve');
+    background-image: url('https: //res.cloudinary.com/djsvysj8v/image/upload/reserve.jpg');
 }
 
 .home-imgs {
