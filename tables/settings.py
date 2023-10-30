@@ -10,7 +10,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -20,7 +20,7 @@ CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 ALLOWED_HOSTS = [
     '8000-justinfourie1993-lifter-qg8mslw7cx.us2.codeanyapp.com',
-    'lifter-log-888688b6aeb4.herokuapp.com', 'localhost']
+    'tables-21004e59d1c4.herokuapp.com', 'localhost']
 
 
 CSRF_TRUSTED_ORIGINS = [
