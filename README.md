@@ -57,7 +57,7 @@ Tables is a robust and user-friendly restaurant booking system designed to strea
 * Cancellation - In addition to editing i was able to delete any bookings(only when logged in).
 * Reservation Management - while logged in as an admin i could view, modify and cancel any bookings.
 * Menu Display - I tested adding and removing meal objects as an admin and respectively those meal were added/rmoved and displayed as such in the menu.html.
-* Mobile Compatibility - Tested the app's responsiveness on various devices (desktop, tablet, and smartphone) to ensure a consistent user experience.
+* Mobile Compatibility - Tested the app's responsiveness on various screen sizes (desktop, tablet, and smartphone) to ensure a consistent user experience.
 * 
 
 ## Validator Testing
@@ -69,18 +69,23 @@ Tables is a robust and user-friendly restaurant booking system designed to strea
   * No errors were returned when passing through the official [(Jigsaw) Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
 * Javascript
-  * No errors were returned when passing through the [(JShint) Validator](https://jshint.com/), just a few warnings.
+  * No errors were returned when passing through the [(JShint) Validator](https://jshint.com/), just 3  warnings.
 
 
 # Planning
+## Project Objectives
 
+* Enhance Dining Experience: My goal is to create a user-friendly platform that simplifies the reservation process for customers, making it convenient to book a table at their favorite restaurant.
+* Restaurant Efficiency: I aim to improve restaurant operations by providing an efficient reservation management system for restaurant owners and staff.
+### Planning highlights
+* User-Centric Approach: I started by identifying the needs of both restaurant owners and diners. This user-centric approach guided My feature selection and design choices.
+* Requirements: Requirements were gathered, including user stories, wich exist in a canban board connected to the [github repo](https://github.com/users/JustinFourie1993/projects/5).
 
-## User Stories
-
-  
 ## Design
+* Wireframes - I created wireframes of what i wanted the web app to look like.
 
-
+![](readme-images/Home-wireframe.png)
+![](readme-images/Menu-wireframe.png)
 
 # Deployment
 

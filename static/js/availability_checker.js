@@ -1,4 +1,3 @@
-
 // This code runs when the document is ready
 $(document).ready(function () {
     let isAvailable = true;
