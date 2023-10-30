@@ -158,17 +158,17 @@ footer {
 
     .home-div-1{
         background-image: linear-gradient(rgba(0, 0, 0, 0.60), 
-        rgba(0, 0, 0, 0.60)), url('../welcome.png');
+        rgba(0, 0, 0, 0.60)), url('https: //res.cloudinary.com/djsvysj8v/image/upload/static/welcome.jpg');
     }
 
     .home-div-2 {
         background-image: linear-gradient(rgba(0, 0, 0, 0.60), 
-        rgba(0, 0, 0, 0.60)), url('../chicken.png');
+        rgba(0, 0, 0, 0.60)), url('https: //res.cloudinary.com/djsvysj8v/image/upload/static/chicken.jpg');
     }
 
     .home-div-3 {
         background-image: linear-gradient(rgba(0, 0, 0, 0.60), 
-        rgba(0, 0, 0, 0.60)), url('../reserve.png');
+        rgba(0, 0, 0, 0.60)), url('https: //res.cloudinary.com/djsvysj8v/image/upload/static/reserve.jpg');
             
     }
 
