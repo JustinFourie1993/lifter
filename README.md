@@ -79,7 +79,7 @@ Tables is a robust and user-friendly restaurant booking system designed to strea
 * Restaurant Efficiency: I aim to improve restaurant operations by providing an efficient reservation management system for restaurant owners and staff.
 ### Planning highlights
 * User-Centric Approach: I started by identifying the needs of both restaurant owners and diners. This user-centric approach guided My feature selection and design choices.
-* Requirements: Requirements were gathered, including user stories, wich exist in a canban board connected to the [github repo](https://github.com/users/JustinFourie1993/projects/5).
+* Requirements: Requirements were gathered, including user stories, wich exist in a canban board connected to the github repo [here](https://github.com/users/JustinFourie1993/projects/5).
 
 ## Design
 * Wireframes - I created wireframes of what i wanted the web app to look like.
@@ -88,16 +88,16 @@ Tables is a robust and user-friendly restaurant booking system designed to strea
 ![](readme-images/Menu-wireframe.png)
 
 # Deployment
+### The app was deployed to heroku as follows
 
+* Create a heroku app.
+* Add python package and cloudinary add on.
+* Configure environment variables in app settings('database_url', 'secret_key', 'cloudinary_url', ).
+* Connect app to github repositry in app deployment.
+* Deploy app from main branch
 
-
-Live link - []()
+Live link - [here](https://tables-21004e59d1c4.herokuapp.com/)
 
 # Credits
 
-## Content
-
- 
-
-## Media
-
+* Images used in web appication are sourced from [pexels.com](https://www.pexels.com/sv-se/) and hosted on [cloudinary.com](https://cloudinary.com/)
